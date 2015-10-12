@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-
+  //allow origin access to prevent get request error due to cross domain
   res.header("Access-Control-Allow-Origin", "*");
 	var text = '{ "users" : [' +
 '{ "firstName":"John" , "lastName":"Doe" },' +
