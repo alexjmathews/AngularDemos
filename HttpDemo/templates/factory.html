@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+	<h1>Testing Out Factories</h1>
+	
+	<p>{{ ctrlMessage }}</p>
+	{{ factMessage }}
+	<p>{{ methodMessage }}</p>
+
+	<form ng-submit="submit()" ng-controller="testFactoryController">
+	  Enter text and hit enter:
+	  <input type="text" ng-model="formText" name="formText" />
+	  <input type="submit" id="submit" value="Submit" />
+	  <p>{{methodMessage}} </p>
+	</form>
+</div>
