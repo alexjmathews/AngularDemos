@@ -1,4 +1,4 @@
-// new Module named httpDemo
+// create the module and name it htmlDemo
 var httpDemo = angular.module('httpDemo', ['ngRoute']);
 
 // configure our routes
@@ -15,16 +15,15 @@ httpDemo.config(function($routeProvider) {
     .when('/about', {
       templateUrl : 'templates/about.html',
       controller  : 'aboutController'
-    }).otherwise({redirectTo:'/'});
+    });
 });
 
 // create the controller and inject Angular's $scope
 httpDemo.controller('mainController', function($scope) {
   // create a message to display in our view
-  $scope.message = 'Welcome to an Angular Demo Application!';
+  $scope.message = 'This is the Home Page!';
 });
 
 httpDemo.controller('aboutController', function($scope) {
-  $scope.message = 'This was made to practice Basic Angular routing.';
+  $scope.message = 'This is an About Page.';
 });
-

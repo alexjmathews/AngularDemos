@@ -1,43 +1,46 @@
-<html>
-  <head>
-    <title>HTML Use Demo App</title>
-    <!-- Bootstrap Font Awesome -->
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
-    <!-- Angular and ngroute -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-route.min.js"></script>
+<!DOCTYPE html>
 
-    <!-- Angular Scripts -->
+<html>
+
+  <head>
+    <!-- Bootstrap and Font Awesome -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+    <!-- Angular and ngroute -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    <!-- app.js File -->
     <script src="app.js"></script>
   </head>
 
-  <!-- Simple Navigation Bar -->
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-      <a class="navbar-brand" href="/">HTML Use Demo Application</a>
+  <!-- define angular controller -->
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">HTTP Use Demo</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        </ul>
       </div>
+    </nav>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Body using Templates -->
-  <body ng-app="htmlDemo">
-    <div class="row">
-      <!-- Inject Template here -->
+    <div id="main" ng-app="httpDemo">
+      <!-- Template Injected here -->
       <div ng-view></div>
     </div>
+
+    <!-- Footer for the site -->
+    <div class="footer navbar-fixed-bottom text-center">
+      <p>This is a demo application for using HTTP Requests with Angular - Alex Mathews</p>
+    </div>
+
   </body>
 
-  <!-- Footer for the site -->
-  <div class="footer navbar-fixed-bottom text-center">
-      <p>This is a demo application for using HTML with Angular - Alex Mathews</p>
-  </footer>
-
 </html>
-
