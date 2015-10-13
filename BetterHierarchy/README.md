@@ -1,6 +1,8 @@
 #Better Hierarchy App
 
 Single page application using templating and ng-route with a cleaner file Hierarchy
+
+Modeled after Angular See Github Repo
 home - basic template
 about - basic template
 
