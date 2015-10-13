@@ -1,4 +1,4 @@
-HTTP Demo App
+#HTTP Demo App
 
 Single page application using templating and ng-route
 timeout - example of using timeout and $apply
@@ -8,7 +8,7 @@ about - basic template
 
 Bootstrap and fontawesome for simple UI features
 
-
+##Instructions for Running
 =====================================
 To run angular app:
 python -m SimpleHTTPServer 8080
