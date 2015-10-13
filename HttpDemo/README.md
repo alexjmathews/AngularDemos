@@ -9,7 +9,6 @@ about - basic template
 Bootstrap and fontawesome for simple UI features
 
 ##Instructions for Running
-=====================================
 To run angular app:
 python -m SimpleHTTPServer 8080
 
