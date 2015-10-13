@@ -18,3 +18,6 @@ For simple server to test http req:
 node server.js
 
 runs on http://0.0.0.0:3000
+
+##ChangeLog
+10/13/15 - updated file hierarchy to have cleaner structure
