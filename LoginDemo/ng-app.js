@@ -1,8 +1,7 @@
 // create the module and name it htmlDemo
-var ngApp = angular.module('ngApp', 
+var angularApp = angular.module('angularApp', 
   ['ngRoute', 
    'ngApp.aboutView',
-   'ngApp.httpFactView',
    'ngApp.homeView', 
    'ngApp.loginView',
     'ngRoute',
@@ -11,18 +10,16 @@ var ngApp = angular.module('ngApp',
    ]);
 
 // configure our routes
-ngApp.config(function($routeProvider) {
+angularApp.config(function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
 });
 
-ngApp.run(['$rootScope', '$location', '$cookieStore', '$http',
+angularApp.run(['$rootScope', '$location', '$cookieStore', '$http',
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-            console.log($rootScope.globals.currentUser.username);
-            console.log($rootScope.globals.currentUser.token);
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; 
         }
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
@@ -33,16 +30,6 @@ ngApp.run(['$rootScope', '$location', '$cookieStore', '$http',
         });
     }]);
 
-ngApp.controller('navigationController', function($scope, $rootScope, AuthenticationService) {
-  // create a message to display in our view
-  $scope.message = "hello";
-  if($rootScope.globals.currentUser) {
-
-  	$scope.username = $rootScope.globals.currentUser.username;
-  	$scope.token = $rootScope.globals.currentUser.token;
-  }
-  
-});
 
 
 

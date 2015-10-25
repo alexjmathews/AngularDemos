@@ -10,13 +10,13 @@ homeView.config(['$routeProvider', function($routeProvider) {
 }]);
 
 
-homeView.controller('homeViewController', function($scope, $rootScope) {
+homeView.controller('homeViewController', function($scope,$location, $rootScope) {
   // create a message to display in our view
   $scope.message = 'This is the Home Page!';
+
   if($rootScope.globals.currentUser) {
 
   	$scope.username = $rootScope.globals.currentUser.username;
   	$scope.token = $rootScope.globals.currentUser.token;
   }
-  
 });
