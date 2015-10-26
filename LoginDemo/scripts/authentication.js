@@ -15,13 +15,14 @@ authentication.factory('AuthenticationService',
 
         };
 
-        service.SetCredentials = function (username, token) {
+        service.SetCredentials = function (username, token, isGoogleUser) {
             var token = token;
 
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    token: token
+                    token: token,
+                    isGoogleUser: isGoogleUser
                 }
             };
 

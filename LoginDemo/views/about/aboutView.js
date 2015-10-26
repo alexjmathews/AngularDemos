@@ -1,4 +1,4 @@
-var aboutView = angular.module('ngApp.aboutView', ['ngRoute']);
+var aboutView = angular.module('angularApp.aboutView', ['ngRoute']);
 
 aboutView.config(['$routeProvider', function($routeProvider) {
   $routeProvider

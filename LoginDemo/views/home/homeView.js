@@ -1,4 +1,4 @@
-var homeView = angular.module('ngApp.homeView', ['ngRoute']);
+var homeView = angular.module('angularApp.homeView', ['ngRoute']);
 
 homeView.config(['$routeProvider', function($routeProvider) {
   $routeProvider
