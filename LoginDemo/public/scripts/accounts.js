@@ -1,4 +1,8 @@
-var loginView = angular.module('Login', ['ngRoute', 'Authentication']);
+var loginView = angular.module('accounts', 
+  ['Authentication',
+    'ngCookies', 
+    'Authentication'
+   ]);
 
 loginView.controller('loginViewController', function($scope, $http, $rootScope, $window, AuthenticationService) {
   $scope.ctrlMessage = 'Message from loginView controller!';
@@ -31,17 +35,17 @@ loginView.controller('loginViewController', function($scope, $http, $rootScope, 
 
 
 
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail());
-    var elem = angular.element(document.querySelector('[ng-app]'));
-    var injector = elem.injector();
-    var $scope = injector.get('$rootScope');  
-      $scope.$apply(function(){
-        $scope.$broadcast('GoogleLogIn');
-    });
-    
-  }
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+  var elem = angular.element(document.querySelector('[ng-app]'));
+  var injector = elem.injector();
+  var $rootScope = injector.get('$rootScope');  
+  $rootScope.$apply(function(){
+    $rootScope.$broadcast('GoogleLogIn');
+  });
+
+}

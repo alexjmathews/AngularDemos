@@ -16,7 +16,6 @@
     <script src="angularApp.js"></script>
     <script src="views/home/homeView.js"></script>
     <script src="views/about/aboutView.js"></script>
-    <script src="/scripts/login.js"></script>
 
     <script src="/scripts/authentication.js"></script>
     <script src="/scripts/navigation.js"></script>
@@ -39,7 +38,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
           <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-          <li ng-hide="loggedIn"><a href="/login.html">Login</a></li>
+          <li ng-hide="loggedIn"><a href="/accounts.html">Login</a></li>
           <li ng-show="loggedIn"><a href="#profile">Hello, {{username}}</a></li>
           <li ng-show="loggedIn"><a href="#" ng-click="logout()">Log Out</a></li>
          

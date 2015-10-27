@@ -6,18 +6,22 @@ authentication.factory('AuthenticationService',
         var service = {};
 
         service.Login = function (username, password, callback) {
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            $http.post('http://localhost:8080/api/authenticate', { username: username, password: password })
-               .success(function (response) {
-                   callback(response);
-               });
-
+            var req = {
+                method: 'POST',
+                url: 'http://localhost:8080/api/authenticate',
+                data: { username: username, password: password }
+            }
+            $http(req).then(function successCallback(response) {
+                console.log(response.data);
+                callback(response.data);
+            }, function errorCallback(err) {
+                console.log("error occured");
+                var response = {success : false, message: "Server Error."};
+                callback(response);
+            });
         };
 
         service.SetCredentials = function (username, token, isGoogleUser) {
-            var token = token;
-
             $rootScope.globals = {
                 currentUser: {
                     username: username,

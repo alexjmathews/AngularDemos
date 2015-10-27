@@ -12,7 +12,6 @@ var angularApp = angular.module('angularApp',
   ['ngRoute', 
    'angularApp.aboutView',
    'angularApp.homeView', 
-   'Login',
     'ngRoute',
     'ngCookies', 
     'Authentication'
