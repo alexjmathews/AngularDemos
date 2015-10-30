@@ -50,6 +50,9 @@ angularApp.controller('navigationController', function($scope, $rootScope, Authe
 	    client_id: '568058566806-gtuof6s75rvk1me0jljdql521prt5nmc.apps.googleusercontent.com'
 	  });
 	});
+
+  
+
   $scope.logout = function() {
     $scope.loggedIn = false;
     if ($rootScope.globals.currentUser.isGoogleUser) {
